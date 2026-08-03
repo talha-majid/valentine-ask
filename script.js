@@ -9,9 +9,18 @@ const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
 
+// Grab the background music element from your HTML
+const bgMusic = document.getElementById("bg-music");
+
+
 // Click Envelope
 
 envelope.addEventListener("click", () => {
+      // Start playing the music immediately when the envelope is opened
+    bgMusic.play().catch(error => {
+        console.log("Audio playback blocked or failed:", error);
+    });
+    
     envelope.style.display = "none";
     letter.style.display = "flex";
 
